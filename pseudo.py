@@ -85,9 +85,9 @@ def jump_map_obj_place(jump_map, oid):
     flag = UPIN | DRAIN
     layout1 = jump_get_layout(jump_map, oid, flag, None)
 
-    if jump_map.is_adding:
+    if jump_map.is_adding:     # target in layout1 == NEW
         flag |= NEW
-    if jump_map.is_extending:
+    if jump_map.is_extending:  # target in layout1 == UP | DRAIN
         flag |= UP
     
     layout2 = jump_get_layout(jump_map, oid, flag, None)
