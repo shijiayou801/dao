@@ -1,12 +1,9 @@
 static void
-
 print_diff(uint64_t count[60000],
            uint64_t obj_count,
            uint64_t pg_count,
            const char *s)
-
 {
-
         double mean = (double)obj_count / pg_count;
         double diff[5] = {0};   // 0~10% ~30% ~50% ~70% >70%
         uint64_t val;
@@ -15,8 +12,6 @@ print_diff(uint64_t count[60000],
         for (int i = 0; i < pg_count; ++i) {
                 val = count[i];
                 per = (double)(val - mean) / mean;
-
-
 
                 if (per > 0.7 || per < -0.7) {
                         ++diff[4];
